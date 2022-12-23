@@ -10,10 +10,10 @@ const CounterView = () => {
     return (
         <div>
             <h1>Count: {count}</h1>
-            <button onClick={() => dispatch(increment())}>Increment</button>
-            <button onClick={() => dispatch(decrement())}>Decrement</button>
-            <button onClick={() => dispatch(reset())}>Reset</button>
-            <button onClick={() => dispatch(increaseByAmount(5))}>IncreaseByFive</button>
+            <button className='mx-2' onClick={() => dispatch(increment())}>Increment</button>
+            <button className='mx-2' onClick={() => dispatch(decrement())}>Decrement</button>
+            <button className='mx-2' onClick={() => dispatch(reset())}>Reset</button>
+            <button className='mx-2' onClick={() => dispatch(increaseByAmount(5))}>IncreaseByFive</button>
         </div>
     );
 };
