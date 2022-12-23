@@ -20,7 +20,7 @@ const PostView = () => {
             }
             <section>
             {
-                posts && posts.map(post => <article>
+                posts && posts.map(post => <article key={post.id}>
                     <h2>{post.title}</h2>
                     <p>{post.body}</p>
                 </article>)
