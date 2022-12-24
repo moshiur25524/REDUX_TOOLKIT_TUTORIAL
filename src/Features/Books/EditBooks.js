@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { updateBook } from './BookSlice';
 
@@ -7,17 +7,19 @@ const EditBooks = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const location = useLocation()
+
     console.log(location.state);
+
     const handleUpdateBook = e => {
         e.preventDefault()
         const book = {
             name: e.target.name.value,
             author: e.target.author.value
         }
-        dispatch(updateBook(location.state))
+        dispatch(updateBook(book))
         navigate('/books', { repalce: true })
-
     }
+
     return (
         <div>
             <h1>Edit a Book</h1>

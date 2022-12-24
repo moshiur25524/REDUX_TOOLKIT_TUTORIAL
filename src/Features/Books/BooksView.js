@@ -8,7 +8,10 @@ const ShowBooks = () => {
     const books = useSelector(state => state.books.books)
 
     const handleDelete = id => {
-        dispatch(deleteBook(id))
+        const proceed = window.confirm('Sure to Delete ?')
+        if (proceed) {
+            dispatch(deleteBook(id))
+        }
     }
     return (
         <div>

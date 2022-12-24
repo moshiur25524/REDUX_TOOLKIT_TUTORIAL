@@ -7,6 +7,7 @@ const AddBooks = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const numberOfBooks = useSelector(state => state.books.books.length)
+
     const handleAddBook = e => {
         e.preventDefault()
         const book = {
@@ -16,12 +17,11 @@ const AddBooks = () => {
         }
         dispatch(addBooks(book))
         navigate('/books', { repalce: true })
-      
-        console.log(book);
+
     }
     return (
         <div>
-            
+
             <h1>Add Book</h1>
             <form onSubmit={handleAddBook}>
                 <input type="text" name="name" id="" placeholder='Book Name' required /> <br /><br />
